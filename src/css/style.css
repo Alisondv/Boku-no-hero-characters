@@ -1,0 +1,107 @@
+body{
+    background-color: #000000;
+    overflow: hidden; /*Impede o scroll da página, oq estiver sobrando na página ira ser escondido*/
+}
+
+main::after{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 80vw;
+
+    background: linear-gradient(-233deg, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0) 65%) no-repeat; /*Posicionamento do gradiente */
+}
+
+main .personagem{
+    display: none;   /* Esconde os personagens que não possuem a classe selecionado */
+    height: 100vh;  /* Ocupa 100% do tamanho disponível de tela */
+}
+
+main .personagem.selecionado{
+    display: block;  /* Exibe o personagem que possue a classe selecionado */
+}
+
+main.personagem .imagem {
+    width: 100%;    /* Ocupa 100% da Largura que tem disponível dentro da tag correspondente e não extrapola para outras tags */
+    height: 100%;   /* Ocupa 100% da Altura que tem disponível dentro da tag correspondente e não extrapola para outras tags */
+    object-fit: cover;  /*Previne que a imagem fique distorcida preenchendo adequadamente o espaço disponível */
+}
+
+.conteudo{
+    position: absolute; /* sobrepõe o elemento sobre os demais elementos */
+    top: 0; /* posiciona o elemento no topo da página */
+    left: 120px;    /*Afasta o elemento da margem esquerda, ou seja o move para a direita*/
+
+    display: flex; /*Ativa a propriedade flex*/
+    flex-direction: column; /* Faz com que o conteúdo fique no formato de coluna. */
+    justify-content: center; /* Centraliza o elemento, porém só funciona se houver espaço interno disponível dentro do elemento */
+    min-height: 100vh; /*Define uma altura mínima para elemento*/
+    max-width: 380px;; /*Define uma largura mínima para elemento*/
+    z-index: 1; /*Coloca o conteudo em cima dos demais elementos*/
+}
+
+.conteudo .nome-personagem {
+    color: #ffffff;
+    font-size: 48px;
+    font-family: "Secular one";
+    font-weight: 400;
+    margin-bottom: 20px; /* cria um espaçamento interno na parte de baixo*/
+}
+
+.conteudo .descricao{
+    color: #ffffff;
+    font-family: "Rubik";
+    line-height: 24px;
+    
+}
+
+.conteudo .logo{
+    background-image: url("../imagens/logo-bnha.png"); /* adiciona a logo de Boku no hero, porém só funciona caso haja espaço no elemento para que ele possa receber uma imagem */
+    height: 100px;
+    width: 230px;
+    background-size: cover;
+    margin-bottom: 35px;
+}
+
+.botoes{
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;/*Gap é um espaçamento que podemos utilizar ao usar a propriedade display flex*/
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.botoes .botao {
+    border: none;
+    background: #000000;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.botoes .botao img{
+    border-radius: 50%;
+}
+
+.botoes .botao.selecionado {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #D9D9D9;
+    border-radius: 50%;
+}
+
+.button-img{
+    width: 65px;
+    height: 65px;
+}
+.imagem{
+    width: auto;
+    height:800px;
+    background-size: cover;
+}

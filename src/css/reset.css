@@ -1,0 +1,14 @@
+/*Remove a formatação padrão do Navegador*/
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+     list-style: none; /* Remove a marcação de bolinhas da lista */
+}
+
+p{
+    text-align: justify;
+}
